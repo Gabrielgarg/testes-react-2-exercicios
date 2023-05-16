@@ -13,38 +13,39 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Kanit', sans-serif;
         letter-spacing: 0.1em;
     }
-`
+`;
 
 const AppWrapper = styled.main`
-    max-width: 1100px;
-    padding: 16px;
-    margin: 0 auto;
-`
+  max-width: 1100px;
+  padding: 16px;
+  margin: 0 auto;
+`;
 
 function App() {
-    const [activeModal, setActiveModal] = useState(null)
+  const [activeModal, setActiveModal] = useState(null);
 
-    const openModal = (allPokemonDetails) => {
-        setActiveModal(allPokemonDetails)
-    }
+  const openModal = (allPokemonDetails) => {
+    setActiveModal(allPokemonDetails);
+    // console.log(activeModal);
+  };
 
-    const closeModal = () => {
-        setActiveModal(null)
-    }
+  const closeModal = () => {
+    setActiveModal(null);
+  };
 
-    return (
-        <>
-            <GlobalStyle />
-            <AppWrapper>
-                <h1>Pokedex</h1>
-                <Pokelist
-                    activeModal={activeModal}
-                    openModal={openModal}
-                    closeModal={closeModal}
-                />
-            </AppWrapper>
-        </>
-    );
+  return (
+    <>
+      <GlobalStyle />
+      <AppWrapper>
+        <h1>Pokedex</h1>
+        <Pokelist
+          activeModal={activeModal}
+          openModal={openModal}
+          closeModal={closeModal}
+        />
+      </AppWrapper>
+    </>
+  );
 }
 
 export default App;
